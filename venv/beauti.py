@@ -26,8 +26,7 @@ pyautogui.click(x=33,y=844,button='left')
 pyautogui.moveTo(153,564,1)
 pyautogui.doubleClick(x=153,y=564, button='left')
 
-elem = driver.find_element_by_id("corp_web_mbr_id")
-elem.send_keys('kuksan88')
+driver.find_element_by_id("corp_web_mbr_id").send_keys('kuksan88')
 
 time.sleep(10)
 
@@ -49,15 +48,12 @@ first_day_month_ago = last_day_month_ago.replace(day=1)
 time.sleep(1)
 driver.find_element_by_id("strtDt").click()
 time.sleep(1)
-pyautogui.write('20292', interval=0.5)
+driver.find_element_by_id("endDt").send_keys(print(first_day_month_ago))
 
 time.sleep(1)
 driver.find_element_by_id("endDt").click()
 time.sleep(1)
-pyautogui.write('last_day_month_ago', interval=0.5)
-
-
-
+driver.find_element_by_id("endDt").send_keys(print(last_day_month_ago))
 
 # 확인 버튼
 driver.find_element_by_xpath("//div[@class='medium_btn_type_02']").click()
